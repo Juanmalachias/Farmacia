@@ -2,6 +2,7 @@ package com.generation.Farmacia.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -38,7 +39,19 @@ public class Produtos {
 	@JsonIgnoreProperties("produtos")
 	private Categoria categoria;
 	
+	@ManyToOne
+	@JsonIgnoreProperties("produtos")
+	private Usuario usuario;
 	
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	public Categoria getCategoria() {
 		return categoria;
 	}
